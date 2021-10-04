@@ -18,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('d/m/Y à H:i'); ?>";
         });
+
+        Blade::directive('price', function ($expression) {
+            return "<?php echo number_format($expression / 100, 2, ',', ' ') . '€'; ?>";
+        });
     }
 
     /**
