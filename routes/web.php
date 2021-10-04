@@ -23,3 +23,7 @@ Route::get('/', function () {
 
 // Paiement
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
