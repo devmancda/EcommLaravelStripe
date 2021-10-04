@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Route::resourceVerbs([
+            'create' => 'creer',
+            'edit' => 'editer',
+        ]);
+
         //https://laravel.com/docs/8.x/blade#extending-blade
         Blade::directive('datetime', function ($expression) {
             return "<?php echo ($expression)->format('d/m/Y à H:i'); ?>";
