@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+//use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+use Symfony\Component\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------

@@ -14,12 +14,14 @@
 // Auth & gestion compte et commandes
 
 use App\Http\Controllers\ItemController;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
 Route::get('/compte', 'HomeController@index')->name('home');
 
-// La boutique & gestion des intl_get_error_message
+// La boutique & gestion des items
 
 Route::get('/', 'ItemController@index')->name('item.index');
 Route::resource('item', 'ItemController')->except('index', 'show', 'create');
